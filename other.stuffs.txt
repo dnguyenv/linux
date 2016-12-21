@@ -1,0 +1,73 @@
+Linux commands:
+- lscpu
+- lshw
+- lshw -short
+- hwinfo
+- lspci
+- lscpi -v | grep "VGA" -A 12
+- lsscsi
+- lsusb
+- inxi -Fx
+- lsblk
+- df -h
+- pydf
+- free -m
+- dmidecode
+- cat /proc/cpuinfo
+- cat /proc/meminfo
+- cat /proc/version
+- cat /proc/partitions
+- hdparm -i /dev/sda
+- lsof -i tcp:8080
+
+See where is the command:
+
+which pip
+
+How to know OS version:
+
+cat /etc/redhat-release
+
+Yum repo:
+/etc/yum.repos.d
+
+save read-only file:
+:w !sudo tee %
+:q!
+
+routing tables:
+netstat -rn -finet
+
+
+kill a process holding a tcp port:
+
+lsof -i tcp:3000
+netstat -anp tcp | grep 3000
+
+
+// Process:
+ps -efla | grep carbon-cache
+netstat -nap | grep 2003
+fuser 1521/tcp
+fuser -k 1521/tcp
+
+rpm -ivh x.rpm
+rpm -ev package
+
+tar -xf x.tar
+
+curl -s etsvc02.hursley.ibm.com:8080 >/dev/null && echo Connected. || echo Fail.
+
+---list all users, groups
+$cat /etc/passwd | grep '/home' | cut -d: -f1
+$cut -d: -f1 /etc/group
+--- list files opened by a process
+lsof -p PID
+eg: Tomcat: ps -ef | grep tomcat-* | grep java | awk ' { print $2 } '
+
+---- Find biggest folder ----
+
+du -s * | sort -nr | head
+
+---- find path to an executable ----
+type -a node
