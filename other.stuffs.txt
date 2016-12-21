@@ -56,7 +56,7 @@ rpm -ev package
 
 tar -xf x.tar
 
-curl -s etsvc02.hursley.ibm.com:8080 >/dev/null && echo Connected. || echo Fail.
+curl -s test.server:8080 >/dev/null && echo Connected. || echo Fail.
 
 ---list all users, groups
 $cat /etc/passwd | grep '/home' | cut -d: -f1
