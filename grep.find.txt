@@ -1,0 +1,3 @@
+`grep -r "string to be searched"  /path/to/dir`
+
+`find . -name '*.js' -exec grep -i 'string to search for' {} \; -print`
